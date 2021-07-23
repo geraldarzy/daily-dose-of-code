@@ -7,6 +7,8 @@ import HomePage from './containers/HomePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Auth } from 'aws-amplify';
+import { AppContext } from './libs/contextLib';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 
 function App() {
@@ -33,9 +35,14 @@ function App() {
     userIsAuthenticating(false);
   };
 
+  useEffect(() => {
+    onLoad();
+  }, []);
+
 
   return (
-    <>
+    !isAuthenticating &&
+    (
       <Switch>
         <Route exact path='/'>
           <LandingPage/>
@@ -46,7 +53,7 @@ function App() {
         </Route>
 
       </Switch>
-    </>
+    )
   );
 }
 
