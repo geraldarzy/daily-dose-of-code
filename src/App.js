@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {Switch, Route, useHistory} from 'react-router-dom'
 import LandingPage from './containers/LandingPage';
@@ -8,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Auth } from 'aws-amplify';
 import { AppContext } from './libs/contextLib';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import Routes from './Routes';
 
 
 function App() {
@@ -43,16 +42,9 @@ function App() {
   return (
     !isAuthenticating &&
     (
-      <Switch>
-        <Route exact path='/'>
-          <LandingPage/>
-        </Route>
-
-        <Route exact path='/home'>
-          <HomePage/>
-        </Route>
-
-      </Switch>
+      <AppContext.Provider value ={{ isAuthenticated, userHasAuthenticated }}>
+        <Routes />
+      </AppContext.Provider>
     )
   );
 }

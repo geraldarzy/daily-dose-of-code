@@ -19,5 +19,4 @@ export default function LoaderButton({
       {props.children}
     </Button>
   );
-}
-{"mode":"full","isActive":false}
+};
