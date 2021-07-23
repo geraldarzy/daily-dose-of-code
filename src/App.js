@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import {Switch, Route, useHistory} from 'react-router-dom'
-import LandingPage from './containers/LandingPage';
-import HomePage from './containers/HomePage';
+import { useHistory } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Auth } from 'aws-amplify';
 import { AppContext } from './libs/contextLib';
 import Routes from './Routes';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 
 function App() {
@@ -42,9 +42,14 @@ function App() {
   return (
     !isAuthenticating &&
     (
-      <AppContext.Provider value ={{ isAuthenticated, userHasAuthenticated }}>
-        <Routes />
-      </AppContext.Provider>
+      <div>
+        <Navbar bg="light" expand="lg">
+
+        </Navbar>
+        <AppContext.Provider value ={{ isAuthenticated, userHasAuthenticated }}>
+          <Routes />
+        </AppContext.Provider>
+      </div>
     )
   );
 }

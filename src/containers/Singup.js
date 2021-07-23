@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
 import { useHistory } from "react-router-dom";
 import LoaderButton from "../components/LoaderButton";
 import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
 import { Auth } from "aws-amplify";
-import "./Signup.css";
+import { Form } from "react-bootstrap";
 
 export default function Signup () {
   const [fields, handleFieldChange] = useFormFields({
