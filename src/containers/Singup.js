@@ -6,6 +6,7 @@ import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
 import { Auth } from "aws-amplify";
 import { Form } from "react-bootstrap";
+import './Signup.css';
 
 export default function Signup () {
   const [fields, handleFieldChange] = useFormFields({
@@ -57,7 +58,7 @@ export default function Signup () {
       await Auth.signIn(fields.email, fields.password);
 
       userHasAuthenticated(true);
-      history.push("/");
+      history.push('/');
     } catch (e) {
       onError(e);
       setIsLoading(false);
