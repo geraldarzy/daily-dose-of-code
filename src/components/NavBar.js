@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
-const NavBar = ({name='Guest', dayCount='1'}) => {
+const NavBar = ({name='Guest', dayCount=1}) => {
     return (
         <>
             <Navbar bg="light" expand="lg">
