@@ -7,9 +7,7 @@ const NavBar = ({name='Guest', dayCount=1, isAuthenticated, handleLogout}) => {
         <>
             <Navbar bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">Daily Dose Of Code</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
+                    <Navbar.Brand href="/">Daily Dose Of Code</Navbar.Brand>
                     <Navbar.Collapse className="justify-content-end">
                         {isAuthenticated ? (
                             <>

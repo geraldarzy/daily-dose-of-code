@@ -1,10 +1,10 @@
 import React from 'react'
-
+import './LandingPage.css'
 const LandingPage = () => {
     return (
-        <>
-            LandingPage
-        </>
+        <div id='landingPageBody'>
+            <h1>Daily Dose of Code</h1>
+        </div>
     )
 }
 
