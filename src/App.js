@@ -8,7 +8,8 @@ import { AppContext } from './libs/contextLib';
 import Routes from './Routes';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { LinkContainer } from 'react-router-bootstrap';
+import NavBar from './components/NavBar';
+
 
 
 function App() {
@@ -39,40 +40,11 @@ function App() {
     onLoad();
   }, []);
 
-
   return (
     !isAuthenticating &&
     (
       <div>
-        <Navbar bg="light" expand="md">
-          <LinkContainer to="/">
-            <Navbar.Brand className="font-weight-bold text-muted">
-              Daily Dose of Code
-            </Navbar.Brand>
-          </LinkContainer>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav activeKey={window.location.pathname}>
-              {isAuthenticated ? (
-                <>
-                  <LinkContainer to="/settings">
-                    <Nav.Link>Settings</Nav.Link>
-                  </LinkContainer>
-                  <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-                </>
-              ) : (
-                <>
-                  <LinkContainer to="/signup">
-                    <Nav.Link>Sign Up</Nav.Link>
-                  </LinkContainer>
-                  <LinkContainer to="/login">
-                    <Nav.Link>Login</Nav.Link>
-                  </LinkContainer>
-                </>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <NavBar isAuthenticated={isAuthenticated} handleLogout={handleLogout}/>  
         <AppContext.Provider value ={{ isAuthenticated, userHasAuthenticated }}>
           <Routes />
         </AppContext.Provider>
