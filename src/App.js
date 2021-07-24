@@ -46,7 +46,7 @@ function App() {
       <div>
         <NavBar isAuthenticated={isAuthenticated} handleLogout={handleLogout}/>  
         <AppContext.Provider value ={{ isAuthenticated, userHasAuthenticated }}>
-          <Routes />
+          <Routes isAuthenticated={isAuthenticated} />
         </AppContext.Provider>
       </div>
     )

@@ -6,11 +6,11 @@ import LandingPage from './containers/LandingPage';
 import LoginPage from './containers/login';
 import SignupPage from './containers/Signup';
 
-export default function Routes() {
+export default function Routes({isAuthenticated}) {
   return (
     <Switch>
       <Route exact path='/'>
-        <LandingPage/>
+        <LandingPage isAuthenticated={isAuthenticated}/>
       </Route>
       <Route exact path='/login'>
         <LoginPage />
