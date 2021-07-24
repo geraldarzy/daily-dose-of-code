@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import HomePage from './containers/HomePage';
 import LoginPage from './containers/login';
-import SignupPage from './containers/Singup';
+import SignupPage from './containers/Signup';
 
 export default function Routes() {
   return (
